@@ -102,24 +102,15 @@ ex) git rebase upstream/javajigi
 1. 어떤 저장소를 포크하면 내 저장소에 그 저장소가 가져온다. 그뒤 내 컴퓨터에 clone한다. clone하면 내 로컬저장소와 원격저장소가 연결된다.
 - 그 뒤 내 로컬저장소에 upstream라는 이름으로 remote 저장소를 붙인다.
 git add remote upstream https://github.com/code-squad/java-pr-practice.git
-
 그럼 로컬저장소에 origin과 upstream 저장소 2개가 생긴다.
-
 - upstream저장소의 변경 사항을 가져오는 명령어
 git fetch <원격저장소 이름> <본인 아이디> → git fetch upstream guswns1659
-
 - fetch한 커밋을 내 로컬 저장소에 붙이는 작업
 git merge <원격저장소 이름/본인 아이디> → git merge upstream/본인 아이디
-
 - 로컬저장소의 변경 사항을 push해서 내 origin저장소를 업데이트한다.
 git push origin master
-
 - 그 뒤 로컬저장소에서 브랜치 만들어서 커밋 2개를 작업한 뒤 push한다.
 git branch <브랜치이름> → git branch guswns1659
 git push –set-upstream origin guswns1659
-
 push하면 원격저장소에 브랜치가 만들어지고 업데이트 된다. 이 브랜치 업데이트를 마스터에 붙인다. 풀 리퀘스트 하기
-
-rebase : 머지와 다르게 나의 변경사항을 대상에다 붙인다.
-
 [깃크라켄](https://www.gitkraken.com/)
