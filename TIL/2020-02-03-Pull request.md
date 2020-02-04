@@ -21,7 +21,7 @@ ex) git clone -b javajigi --single-branch https://github.com/javajigi/java-racin
 cd {저장소 아이디}
 ex) cd java-racingcar
 ```
-
+가
 ----
 4. 기능 구현을 위한 브랜치 생성
 
