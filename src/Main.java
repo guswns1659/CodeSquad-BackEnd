@@ -3,21 +3,17 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-//        testIOStream();
-//        testCollection();
+        testIOStream();
+        testCollection();
         testOptional();
     }
 
     private static void testOptional() {
         Optional<String> optionalS = Optional.of("String-String");
-        Optional<String> optionalS2 = Optional.ofNullable("String");
-        Stream.of("String-String")
-                .flatMap(s -> Stream.of(s.split("-")))
-                .forEach(System.out::println);
+        optionalS.ifPresent(System.out::println);
     }
 
     private static void testCollection() {
