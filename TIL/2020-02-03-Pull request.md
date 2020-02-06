@@ -64,7 +64,7 @@ ex) code-squad/java-racingcar javajigi 브랜치 기준 => javajigi/java-racingc
 git checkout 본인_아이디
 git branch -D 삭제할_브랜치이름
 ex) git checkout javajigi
-ex) git branch -D step1
+ex) git branch -D step1i
 ```
 
 ----
