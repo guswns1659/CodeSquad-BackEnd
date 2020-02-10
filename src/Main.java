@@ -1,40 +1,25 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.Optional;
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        testIOStream();
-        testCollection();
-        testOptional();
+        awtTest();
     }
 
-    private static void testOptional() {
-        Optional<String> optionalS = Optional.of("String-String");
-        optionalS.ifPresent(System.out::println);
-    }
+    private static void awtTest() {
+        Frame frame = new Frame("Login");
+        frame.setSize(300, 200);
+        frame.setLayout(null);
 
-    private static void testCollection() {
-        int[] ints = new int[3];
-    }
+        Button button = new Button("check");
+        button.setSize(100, 30);
+        button.setLocation(100, 50);
 
-    private static void testIOStream() {
-        try (BufferedWriter bw =
-                     new BufferedWriter(new FileWriter("test.md"));
-             BufferedReader br =
-                     new BufferedReader(new FileReader("test.md"))) {
-            bw.write("hello");
-            while (br.readLine() == null) {
-                throw new Exception();
-            }
+        Panel panel = new Panel();
 
-        } catch (Exception e) {
-            System.out.println("에러");
-            e.printStackTrace();
-        }
-        System.out.println("catch() 이후");
+
+        frame.add(panel);
+        frame.add(button);
+        frame.setVisible(true);
 
     }
 }
