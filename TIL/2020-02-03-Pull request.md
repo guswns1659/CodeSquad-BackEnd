@@ -94,6 +94,20 @@ ex) git rebase upstream/javajigi
 13. 4단계부터 다시 진행
 
 ----
+
+### Heroku 사용법 
+Heroku란 무료로 웹호스팅 해주는 사이트이다. 거의 git처럼 동작한다. 
+- Heroku 가입 후 app을 생성한다. 이후 Heroku CLI를 다운
+- heroku login
+- app의 git을 remote로 등록 : heroku git:remote -a app name
+- git push heroku master하는데 내가 push하고 싶은 브랜치를 push 하려면 이 명령을 입력해야 한다. git push heroku step1:master
+- 기존 브랜치가 있어서 git push 안될 대 git push -f heroku step1:master로 강제 push한다. 
+- heroku ps:scale web=1
+- heroku open 명령으로 실행
+[출처 : https://victorydntmd.tistory.com/112](https://victorydntmd.tistory.com/112)
+- Heroku 삭제 하기 : heroku apps:destroy 
+
+
 ## 동영상으로 살펴보는 코드스쿼드의 온라인 코드 리뷰 과정
 [github을 기반으로한 온라인 코드 리뷰 방법](https://youtu.be/a5c9ku-_fok)
 
