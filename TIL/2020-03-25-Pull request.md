@@ -21,7 +21,7 @@ ex) git clone -b javajigi --single-branch https://github.com/javajigi/java-racin
 cd {저장소 아이디}
 ex) cd java-racingcar
 ```
-가
+
 ----
 4. 기능 구현을 위한 브랜치 생성
 
@@ -97,16 +97,34 @@ ex) git rebase upstream/javajigi
 
 ### Heroku 사용법 
 Heroku란 무료로 웹호스팅 해주는 사이트이다. 거의 git처럼 동작한다. 
-- Heroku 가입 후 app을 생성한다. 이후 Heroku CLI를 다운
+- Heroku 가입 후 app을 생성한다. 이후 Heroku CLI를 다운 (맥이나, 윈도우는 홈페이지에서, 리눅스는 아래 명령어로)
+[공식사이트](https://devcenter.heroku.com/articles/heroku-cli)
+
+```
+sudo snap install --classic heroku
+```
+
+#### 에러 : 설치한 후 heroku login이 없는 명령어라 뜰 때 
+[참고 : https://stackoverflow.com/questions/12795498/heroku-command-not-found](https://stackoverflow.com/questions/12795498/heroku-command-not-found)
+- snap 명령으로 다운받으면 /snap/bin/heroku에 heroku가 저장된다. 
+- $PATH를 지정하거나 우선 /snap/bin/heroku login으로 명령을 실행한다. 
+
+#### root 폴더를 배포하는 경우
 - heroku login
 - app의 git을 remote로 등록 : heroku git:remote -a <<app name>> ex) hyunjun2
 - git push heroku master하는데 내가 push하고 싶은 브랜치를 push 하려면 이 명령을 입력해야 한다. git push heroku step1:master
 - 기존 브랜치가 있어서 git push 안될 대 git push -f heroku step1:master로 강제 push한다. 
 - heroku ps:scale web=1
 - heroku open 명령으로 실행
-[출처 : https://victorydntmd.tistory.com/112](https://victorydntmd.tistory.com/112)
-- Heroku 삭제 하기 : heroku apps:destroy 
 
+#### subtree를 배포하는 경우
+- heroku login 
+- app의 git을 remote로 등록 : heroku git:remote -a <<app name>> ex) hyunjun2
+- git subtree push --prefix BE-workspace heroku master 
+  - BE-workspace는 내가 배포할 subtree 폴더 이름이다. 
+#### heroku 삭제 
+- Heroku 삭제 하기 : heroku apps:destroy 
+[출처 : https://victorydntmd.tistory.com/112](https://victorydntmd.tistory.com/112)
 
 ## 동영상으로 살펴보는 코드스쿼드의 온라인 코드 리뷰 과정
 [github을 기반으로한 온라인 코드 리뷰 방법](https://youtu.be/a5c9ku-_fok)
